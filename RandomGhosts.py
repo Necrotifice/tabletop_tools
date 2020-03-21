@@ -41,7 +41,7 @@ Banes = [
 #==========================================MAIN BODY===================
 #Ask for user input on 
 GPick = input("What rank do you want your Ghost to be?  Enter a number, or a K if this is a ghost for a Krewe!\n >")
-if (GPick != ('k' or 'K')) & (GPick in range(0,5)):
+if (GPick != ('k' or 'K')) & (int(GPick) in range(0,5)):
     GRank = int(GPick)
     Manifestations.append("Materialize")#Krewe ghosts shouldn't have this, so it's only for non-K
 elif GPick == ('k' or 'K'):
