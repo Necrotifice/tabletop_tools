@@ -16,11 +16,11 @@ Limits = [
 
 #Initialize some variables that will be used later.
 NuminaKnown = []
-Numina = Numina = ["Anchor Jump", "Awe","Blast","Drain","Emotional aura","Firestarter","Hallucination","Host Jump", "Implant Mission", "Innocuous","Left-Handed Spanner","Moliate","Omen Trance","Pathfinder","Proxy","Puppeteer","Rapture","Regenerate","Seek","Speed","Sign","Stalwart","Telekinesis"]
+Numina = ["Anchor Jump", "Awe","Blast","Drain","Emotional aura","Firestarter","Hallucination","Host Jump", "Implant Mission", "Innocuous","Left-Handed Spanner","Moliate","Omen Trance","Pathfinder","Proxy","Puppeteer","Rapture","Regenerate","Seek","Speed","Sign","Stalwart","Telekinesis"]
 Power = 1
 Finesse = 1
 Resistance = 1
-Manifestations = ["Avernian Gateway", "Discorporate","Fetter","Image","Poessess","Unfetter"]
+Manifestations = ["Avernian Gateway", "Discorporate","Fetter","Image","Possess","Unfetter"]
 #^ Contains all Manifestations with no requirements, those get added conditionally to the list later
 #That also doesn't contain Twilight Form, because everyone gets that so it's added for free at the end
 ManifestationsKnown = []
@@ -29,6 +29,7 @@ Bans = [
     "This ghost has an easy to trigger ban, but one that isn't dangerous",
     "This ghost should have a ban that seriously dirupts it",
     "This ghost should have a ban that seriously disrupts it",
+    "This ghost should have a ban that truly foils the ghost in a dramatic way, but is esoteric and difficult to discover/pull off",
     "This ghost should have a ban that truly foils the ghost in a dramatic way, but is esoteric and difficult to discover/pull off"
     ]
 Banes = [
@@ -36,12 +37,14 @@ Banes = [
     "This ghost has a somewhat common bane - something you could find in an average household, but not necessarily in every room",
     "This ghost has a somewhat more rare bane, but it's still something natural - a particular wood or metal, or maybe a certain kind of animal. They never need to be specifically made.",
     "This ghost has a somewhat more rare bane, but it's still something natural - a particular wood or metal, or maybe a certain kind of animal. They never need to be specifically made.",
-    "This ghost has a very specific bane that requires a large amount of effort to find or make."]
+    "This ghost has a very specific bane that requires a large amount of effort to find or make.",
+    "This ghost should have a ban that truly foils the ghost in a dramatic way, but is esoteric and difficult to discover/pull off"
+]
 
 #==========================================MAIN BODY===================
 #Ask for user input on 
 GPick = input("What rank do you want your Ghost to be?  Enter a number, or a K if this is a ghost for a Krewe!\n >")
-if (GPick != ('k' or 'K')) & (int(GPick) in range(0,5)):
+if (str(GPick) != ('k' or 'K')):
     GRank = int(GPick)
     Manifestations.append("Materialize")#Krewe ghosts shouldn't have this, so it's only for non-K
 elif GPick == ('k' or 'K'):
@@ -138,5 +141,3 @@ else:
     print("Defense: " + str(Power))
 print("Speed: " + str(Power + Finesse + 5))
 print("Size: 5 (probably!)")
-
-
